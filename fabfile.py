@@ -8,7 +8,8 @@ except ImportError:
 env.hosts = hosts
 
 def clear():
-    local('rm -r _site/*')
+    with settings(warn_only=True):
+        local('rm -r _site/*')
 
 def pack():
     with settings(warn_only=True):
