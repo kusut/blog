@@ -1,4 +1,5 @@
 import docutils.core
+import re
 
 config = {
     'name': "reStructuredText",
@@ -7,5 +8,21 @@ config = {
     }
 
 
+def drop_int(matchobj):
+    var = matchobj.group(0)
+    return str(int(var) + 2)
+
+
+def drop_level_heading(matchobj):
+    var = matchobj.group(0)
+    return re.sub('\d', drop_int, var)
+
+
 def run(content):
-    return docutils.core.publish_parts(content, writer_name='html')['html_body']
+    return re.sub(
+        '</?h\d>',
+        drop_level_heading,
+        docutils.core.publish_parts(
+            content, writer_name='html'
+        )['html_body']
+    )
