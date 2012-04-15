@@ -30,26 +30,8 @@
     <div class="container-fluid">
 
       <div class="row-fluid">
-	<div id="centre" class="span9">
-	  <div class="row-fluid">
-	    <div class="span2">
-	        <ul>
-		  <div><a href="${bf.util.site_path_helper(bf.config.blog.path,'feed')}">entries</a>, <a href="http://${bf.config.blog.disqus.site}.disqus.com/latest.rss">comments</a>
-		  </div>
-		  
-		  
-		</ul>
-	    </div>
-
-	    <div id="title" class="span2">
-	      <div>kusut@jabber.org</div>
-	      <div><a href="http://bitbucket.org/kusut">bitbucket</a></div>
-	    </div>
-
-	    <div id="title" class="span2">
-	      <h1><a href="/">/</a></h1>
-	    </div>
-	  </div>
+	<div id="centre" class="span7">
+	  <h1><a id="title" href="/">/</a></h1>
 	</div>
       </div>
 
@@ -59,10 +41,10 @@
 	</div>
       </div>
 
-    </div> <!-- /container -->
-
-
-    <div id="footer">
-      <%include file="footer.mako" />
-    </div> <!-- End Footer -->
-</body></html>
+      <div class="row-fluid">
+	<div id="centre" class="centre span7">
+	  <%include file="footer.mako" />
+	</div>
+      </div>
+    </body>
+</html>

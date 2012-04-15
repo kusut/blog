@@ -1,11 +1,8 @@
 <%inherit file="site.mako" />
 % for i, post in enumerate(posts):
-  <%include file="post.mako" args="post=post" />
+  <%include file="post_excerpt.mako" args="post=post" />
 % if bf.config.blog.disqus.enabled:
-  <div class="after_post"><a href="${post.permalink}#disqus_thread">Read and Post Comments</a></div>
-  % if i != len(posts)-1:
-  <hr class="interblog" />  
-  % endif
+  <div class="after_post"><a href="${post.permalink}#disqus_thread">Read Full Article and Post Comments</a></div>
 % endif
 % endfor
 
